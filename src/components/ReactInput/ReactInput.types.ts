@@ -23,6 +23,7 @@ export type ReactInputProps = {
   isMultiple?: boolean
   inputErrorText?: string
   inputAcceptType?: string
+  inputRefHandleChange?: (ref: any) => void | any
   inputHandleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   inputHandleBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void
   inputHandleOnKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void

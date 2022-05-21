@@ -17,6 +17,7 @@ export const ReactInput: FunctionComponent<ReactInputProps> = ({
   isMultiple,
   inputErrorText,
   inputAcceptType,
+  inputRefHandleChange,
   inputHandleChange,
   inputHandleBlur,
   inputHandleOnKeyDown,
@@ -33,7 +34,9 @@ export const ReactInput: FunctionComponent<ReactInputProps> = ({
           <Form.Label className="input-label">{inputLabelText}</Form.Label>
           <Form.Control
             data-test-id={dataTestId}
+            id={id}
             type={inputType}
+            ref={inputRefHandleChange}
             placeholder={inputPlaceholder}
             name={inputName}
             readOnly={isReadOnly}
