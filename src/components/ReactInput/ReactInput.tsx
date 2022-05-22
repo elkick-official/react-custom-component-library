@@ -17,13 +17,18 @@ export const ReactInput: FunctionComponent<ReactInputProps> = ({
   isMultiple,
   inputErrorText,
   inputAcceptType,
+  inputAs,
   inputRefHandleChange,
   inputHandleChange,
   inputHandleBlur,
   inputHandleOnKeyDown,
   inputHandleOnKeyUp,
 }) => {
-  const onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+  const onBlur = (
+    event:
+      | React.FocusEvent<HTMLInputElement>
+      | React.FocusEvent<HTMLTextAreaElement>,
+  ) => {
     if (inputHandleBlur) inputHandleBlur(event)
   }
 
@@ -45,11 +50,13 @@ export const ReactInput: FunctionComponent<ReactInputProps> = ({
             autoComplete={inputAutoComplete}
             multiple={isMultiple}
             accept={inputAcceptType}
+            as={inputAs}
             onBlur={onBlur}
             onChange={inputHandleChange}
             onKeyDown={inputHandleOnKeyDown}
             onKeyUp={inputHandleOnKeyUp}
           />
+
           {inputErrorText && inputErrorText !== '' && (
             <>
               <span className="warning-msg-text">{inputErrorText}</span>

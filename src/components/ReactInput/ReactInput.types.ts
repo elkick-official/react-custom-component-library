@@ -1,4 +1,4 @@
-import React, { HTMLInputTypeAttribute } from 'react'
+import React from 'react'
 export type ReactInputProps = {
   id: string
   inputType:
@@ -11,6 +11,7 @@ export type ReactInputProps = {
     | 'password'
     | 'hidden'
     | 'time'
+    | 'color'
   inputName: string
   inputValue: string
   inputPlaceholder?: string
@@ -23,9 +24,26 @@ export type ReactInputProps = {
   isMultiple?: boolean
   inputErrorText?: string
   inputAcceptType?: string
+  inputAs?: any
   inputRefHandleChange?: (ref: any) => void | any
-  inputHandleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  inputHandleBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void
-  inputHandleOnKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void
-  inputHandleOnKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void
+  inputHandleChange: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>,
+  ) => void
+  inputHandleBlur?: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>,
+  ) => void
+  inputHandleOnKeyDown?: (
+    event:
+      | React.KeyboardEvent<HTMLInputElement>
+      | React.KeyboardEvent<HTMLTextAreaElement>,
+  ) => void
+  inputHandleOnKeyUp?: (
+    event:
+      | React.KeyboardEvent<HTMLInputElement>
+      | React.KeyboardEvent<HTMLTextAreaElement>,
+  ) => void
 }
